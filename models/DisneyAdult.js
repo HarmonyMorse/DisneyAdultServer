@@ -8,6 +8,7 @@ const DisneyAdultSchema = new Schema({
         type: mongoose.Types.ObjectId, ref: 'DisneyItem' 
     }],
     park: String,
+    image: String,
   },{timestamps: true});
   
   module.exports = mongoose.model("DisneyAdult", DisneyAdultSchema);
