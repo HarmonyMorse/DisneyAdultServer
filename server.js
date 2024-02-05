@@ -25,7 +25,7 @@ app.use("/", disneyAdultsRouter);
 
 
 app.get("/", (req, res) => {
-    res.send("hello world");
+    res.send("hello world!");
 });
 
 app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
