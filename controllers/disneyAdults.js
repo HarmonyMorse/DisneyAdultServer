@@ -29,7 +29,7 @@ const create = async (req, res) => {
         const disneyAdult = await DisneyAdult.findById(req.params.id);
         disneyAdult.items.push(newDisneyItem);
         await disneyAdult.save();
-        // res.json(newDisneyItem);
+        res.json(newDisneyItem);
     } catch (err) {
         res.status(400).json(err);
     }
