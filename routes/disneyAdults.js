@@ -18,4 +18,7 @@ router.get('/:id', disneyAdultCtlr.show);
 // POST '/:id' - create and add new item to a disney adult
 router.post('/:id', disneyAdultCtlr.new);
 
+// DELETE '/:id/:itemId' - delete an item from a disney adult
+router.delete('/:id/:itemId', disneyAdultCtlr.destroy);
+
 module.exports = router;
