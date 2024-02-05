@@ -35,6 +35,19 @@ const create = async (req, res) => {
     }
 };
 
+// Delete Disney Item
+const destroy = async (req, res) => {
+    try {
+        const disneyAdult = await DisneyAdult.findById(req.params.id);
+        disneyAdult.items.remove(req.params.itemId);
+        await disneyAdult.save();
+        await DisneyItem.findByIdAndDelete(req.params.itemId);
+        res.json({ message: 'The item has been deleted' });
+    } catch (err) {
+        res.status(400).json(err);
+    }
+};
+
 // Create new Disney Adult
 const newDA = async (req, res) => {
     try {
@@ -51,5 +64,6 @@ module.exports = {
     index,
     show,
     new: create,
+    destroy,
     newDA
 };
